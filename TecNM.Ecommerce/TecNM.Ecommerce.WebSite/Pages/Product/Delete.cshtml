@@ -1,0 +1,40 @@
+@page "{id:int}"
+@model TecNM.Ecommerce.WebSite.Pages.Product.Delete
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>Delete Product</h2>
+                
+            <form method="post">
+                <input type="hidden" asp-for="Product.Id"/>
+                <div class="form-group">
+                    <label asp-for="Product.Name"></label>
+                    <input asp-for="Product.Name" class="form-control" maxlength="45"/>
+                    <span class="text-danger" asp-validation-for="Product.Name"></span>
+                </div>
+                    
+                <div class="form-group">
+                    <label asp-for="Product.Description"></label>
+                    <input asp-for="Product.Description" class="form-control" maxlength="100"/>
+                    <span class="text-danger" asp-validation-for="Product.Description"></span>
+                </div>
+                    
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <li>An error</li>
+                    </ul>
+                </div>    
+                    
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary mr-3">Save</button>
+                        <a class="btn btn-secondary" asp-page="/Product/List">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+        </div>
+    </div>
